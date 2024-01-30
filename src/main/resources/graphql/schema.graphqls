@@ -1,0 +1,41 @@
+
+type Query {
+    bookById(id: ID): Book
+    allAuthors: [Author]
+    authorByName(firstName: String, lastName: String): Author
+    allEmployees: [Employee]
+}
+
+type Employee{
+    id: ID
+    name: String
+    department: Department
+}
+
+type Department{
+    departmentId: ID
+    departmentName: String
+    employeeNumber: ID
+    location: Location
+    ceos: [Employee]
+}
+
+type Location{
+    id: ID
+    name: String
+    region: String
+    description: String
+}
+
+type Book {
+    id: ID
+    name: String
+    pageCount: Int
+    author: Author
+}
+
+type Author {
+    id: ID
+    firstName: String
+    lastName: String
+}
